@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored XSS Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .comment-box {
+            text-align: left;
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Stored XSS Example</h2>
+    <form method="POST">
+        <input type="text" name="comment" placeholder="Enter your comment">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Stored Comments:</h3>
+    <div class="comment-box">
+        <ul>
+            {% for c in comments %}
+                <li>{{ c | safe }}</li>  
+            {% endfor %}
+        </ul>
+    </div>
+
+    <br><br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

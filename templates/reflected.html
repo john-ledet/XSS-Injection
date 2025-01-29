@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflected XSS Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        h2 {
+            color: #333;
+        }
+        .output-box {
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h2>Reflected XSS Example</h2>
+    <p>Try passing a name in the URL like:</p>
+    <p><b>/reflected?name=John</b></p>
+
+    <div class="output-box">
+        <p>Hello, {{ name | safe}}!</p> 
+    </div>
+
+    <br><br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
