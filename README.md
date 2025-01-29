@@ -1,2 +1,2 @@
 # XSS-Injection
-Demonstration of XSS Injection on a vulnerable flask web app
+a fully functional application vulnerable to both Stored XSS and Reflected XSS injections, with code provided and vulnerabilities clearly highlighted alongside the fixed version of the code
